@@ -1,0 +1,5 @@
+# Jetson Orin Nano requirements (JetPack 6.x / 7.x)
+# Note: PyTorch on Jetson should be installed using NVIDIA-provided wheel or system pre-installed containers.
+# Do not run generic 'pip install torch' which lacks Jetson GPU/ARM64 acceleration.
+-r requirements-common.txt
+# Optional: xgboost (if built/installed via apt or compatible arm64 wheel; otherwise Scikit-learn HistGradientBoosting is used)

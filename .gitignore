@@ -1,0 +1,42 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Data & checkpoints (avoid committing massive datasets)
+dataset/raw/*.pcap
+dataset/raw/*.zip
+models/checkpoints/*.tmp
+
+# Streamlit & IDE
+.streamlit/secrets.toml
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment variables
+.env

@@ -1,0 +1,49 @@
+{
+  "dataset_name": "CIC-IDS2017 Curated Benchmark Subset",
+  "official_source": "https://www.unb.ca/cic/datasets/ids-2017.html",
+  "generation_date": "2026-11-24",
+  "canonical_feature_count": 67,
+  "files": {
+    "train_subset": {
+      "path": "C:\\Users\\ARPIT NAINWAL\\OneDrive\\Desktop\\ECHS\\dataset\\processed\\train_subset.csv",
+      "total_records": 23400,
+      "classes": {
+        "BENIGN": 12000,
+        "DDoS": 3500,
+        "DoS Hulk": 3000,
+        "PortScan": 2500,
+        "FTP-Patator": 1200,
+        "SSH-Patator": 1200
+      }
+    },
+    "test_subset": {
+      "path": "C:\\Users\\ARPIT NAINWAL\\OneDrive\\Desktop\\ECHS\\dataset\\processed\\test_subset.csv",
+      "total_records": 7800,
+      "classes": {
+        "BENIGN": 4000,
+        "DDoS": 1200,
+        "DoS Hulk": 1000,
+        "PortScan": 800,
+        "FTP-Patator": 400,
+        "SSH-Patator": 400
+      }
+    },
+    "demo_benign_traffic": {
+      "path": "C:\\Users\\ARPIT NAINWAL\\OneDrive\\Desktop\\ECHS\\dataset\\raw\\demo_benign_traffic.csv",
+      "total_records": 1500,
+      "classes": {
+        "BENIGN": 1500
+      }
+    },
+    "demo_attack_traffic": {
+      "path": "C:\\Users\\ARPIT NAINWAL\\OneDrive\\Desktop\\ECHS\\dataset\\raw\\demo_attack_traffic.csv",
+      "total_records": 1500,
+      "classes": {
+        "DDoS": 600,
+        "PortScan": 400,
+        "BENIGN": 300,
+        "FTP-Patator": 200
+      }
+    }
+  }
+}

@@ -1,0 +1,335 @@
+{
+  "title": "CyberSentinel Model Benchmark & Performance Evaluation",
+  "generated_at": "1795537742.3072457",
+  "models": {
+    "random_forest": {
+      "name": "Random Forest",
+      "mode": "multiclass",
+      "accuracy": 0.9999,
+      "precision_macro": 1.0,
+      "recall_macro": 0.9996,
+      "f1_macro": 0.9998,
+      "false_positive_rate": 0.0003,
+      "inference_latency_ms_per_1k": 12.779,
+      "training_duration_seconds": 1.318,
+      "target_names": [
+        "BENIGN",
+        "DDoS",
+        "DoS Hulk",
+        "FTP-Patator",
+        "PortScan",
+        "SSH-Patator"
+      ],
+      "confusion_matrix": [
+        [
+          4000,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1200,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1000,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          400,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          800,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          399
+        ]
+      ],
+      "classification_report": {
+        "BENIGN": {
+          "precision": 0.9997500624843789,
+          "recall": 1.0,
+          "f1-score": 0.9998750156230471,
+          "support": 4000.0
+        },
+        "DDoS": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 1200.0
+        },
+        "DoS Hulk": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 1000.0
+        },
+        "FTP-Patator": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 400.0
+        },
+        "PortScan": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 800.0
+        },
+        "SSH-Patator": {
+          "precision": 1.0,
+          "recall": 0.9975,
+          "f1-score": 0.9987484355444305,
+          "support": 400.0
+        },
+        "accuracy": 0.9998717948717949,
+        "macro avg": {
+          "precision": 0.9999583437473966,
+          "recall": 0.9995833333333334,
+          "f1-score": 0.9997705751945797,
+          "support": 7800.0
+        },
+        "weighted avg": {
+          "precision": 0.999871826915066,
+          "recall": 0.9998717948717949,
+          "f1-score": 0.9998717226551231,
+          "support": 7800.0
+        }
+      },
+      "top_features": {
+        "Destination Port": 0.09317010406614275,
+        "Packet Length Variance": 0.06378854014534947,
+        "Packet Length Std": 0.06046056415939244,
+        "Subflow Fwd Bytes": 0.049836711618276054,
+        "Subflow Bwd Bytes": 0.046871299485569035,
+        "Average Packet Size": 0.04659720536223482,
+        "Max Packet Length": 0.04632028106112946,
+        "Packet Length Mean": 0.04344836588561248,
+        "Bwd Packet Length Mean": 0.04246215673071531,
+        "Total Length of Fwd Packets": 0.041983053677622104,
+        "Bwd Packet Length Min": 0.04144899619659895,
+        "Subflow Fwd Packets": 0.03781955562957624,
+        "Total Fwd Packets": 0.030242974058464853,
+        "Bwd Packet Length Std": 0.029859825048730228,
+        "Fwd Header Length": 0.029585165497290306
+      }
+    },
+    "xgboost": {
+      "name": "XGBoost",
+      "is_fallback": false,
+      "mode": "multiclass",
+      "accuracy": 0.9997,
+      "precision_macro": 0.9999,
+      "recall_macro": 0.9994,
+      "f1_macro": 0.9997,
+      "false_positive_rate": 0.0005,
+      "inference_latency_ms_per_1k": 4.853,
+      "training_duration_seconds": 4.674,
+      "target_names": [
+        "BENIGN",
+        "DDoS",
+        "DoS Hulk",
+        "FTP-Patator",
+        "PortScan",
+        "SSH-Patator"
+      ],
+      "confusion_matrix": [
+        [
+          4000,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1200,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          999,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          400,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          800,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          399
+        ]
+      ],
+      "classification_report": {
+        "BENIGN": {
+          "precision": 0.9995002498750625,
+          "recall": 1.0,
+          "f1-score": 0.9997500624843789,
+          "support": 4000.0
+        },
+        "DDoS": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 1200.0
+        },
+        "DoS Hulk": {
+          "precision": 1.0,
+          "recall": 0.999,
+          "f1-score": 0.9994997498749375,
+          "support": 1000.0
+        },
+        "FTP-Patator": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 400.0
+        },
+        "PortScan": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 800.0
+        },
+        "SSH-Patator": {
+          "precision": 1.0,
+          "recall": 0.9975,
+          "f1-score": 0.9987484355444305,
+          "support": 400.0
+        },
+        "accuracy": 0.9997435897435898,
+        "macro avg": {
+          "precision": 0.9999167083125103,
+          "recall": 0.9994166666666668,
+          "f1-score": 0.9996663746506246,
+          "support": 7800.0
+        },
+        "weighted avg": {
+          "precision": 0.9997437178846473,
+          "recall": 0.9997435897435898,
+          "f1-score": 0.9997435094910544,
+          "support": 7800.0
+        }
+      },
+      "top_features": {
+        "Bwd Packet Length Min": 0.25063958764076233,
+        "Packet Length Mean": 0.11819890886545181,
+        "Total Length of Fwd Packets": 0.07616913318634033,
+        "Packet Length Std": 0.06817462295293808,
+        "Bwd Packet Length Mean": 0.05896946042776108,
+        "Total Fwd Packets": 0.054998211562633514,
+        "Destination Port": 0.04771621897816658,
+        "Total Backward Packets": 0.04662970453500748,
+        "Bwd Header Length": 0.03606981784105301,
+        "Bwd Packet Length Max": 0.03306810185313225,
+        "Fwd Header Length": 0.029844623059034348,
+        "Subflow Fwd Bytes": 0.02612469717860222,
+        "Packet Length Variance": 0.02540876716375351,
+        "Subflow Fwd Packets": 0.02483816258609295,
+        "Subflow Bwd Packets": 0.02315818890929222
+      }
+    },
+    "autoencoder": {
+      "name": "Deep Learning Autoencoder",
+      "mode": "unsupervised_anomaly_detection",
+      "accuracy": 0.8295,
+      "precision": 0.9703,
+      "recall": 0.6705,
+      "f1_score": 0.793,
+      "false_positive_rate": 0.0195,
+      "anomaly_threshold": 0.573097825050354,
+      "threshold_percentile": 98.0,
+      "inference_latency_ms_per_1k": 1.626,
+      "training_duration_seconds": 11.816,
+      "target_names": [
+        "BENIGN",
+        "ANOMALY (ATTACK)"
+      ],
+      "confusion_matrix": [
+        [
+          3922,
+          78
+        ],
+        [
+          1252,
+          2548
+        ]
+      ],
+      "classification_report": {
+        "BENIGN": {
+          "precision": 0.758020873598763,
+          "recall": 0.9805,
+          "f1-score": 0.855025070852409,
+          "support": 4000.0
+        },
+        "ANOMALY (ATTACK)": {
+          "precision": 0.9702970297029703,
+          "recall": 0.6705263157894736,
+          "f1-score": 0.7930283224400871,
+          "support": 3800.0
+        },
+        "accuracy": 0.8294871794871795,
+        "macro avg": {
+          "precision": 0.8641589516508666,
+          "recall": 0.8255131578947368,
+          "f1-score": 0.8240266966462481,
+          "support": 7800.0
+        },
+        "weighted avg": {
+          "precision": 0.8614374624700434,
+          "recall": 0.8294871794871795,
+          "f1-score": 0.8248215267540983,
+          "support": 7800.0
+        }
+      }
+    }
+  }
+}

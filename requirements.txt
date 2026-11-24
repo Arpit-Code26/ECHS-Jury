@@ -1,0 +1,4 @@
+# CyberSentinel Unified Requirements
+-r requirements/requirements-common.txt
+xgboost>=2.0.0
+torch>=2.2.0
