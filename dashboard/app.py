@@ -536,7 +536,7 @@ elif page == "5. AI Security Assistant":
     if ollama_info["is_online"]:
         st.success(f"🟢 **Local Ollama Active** | Model: `{ollama_info['preferred_model']}` | Host: `{OLLAMA_BASE_URL}`")
     else:
-        st.warning(f"🟡 **Offline Mode Active:** Ollama not detected on `{OLLAMA_BASE_URL}`. Using CyberSentinel Grounded Deterministic Security Engine. To enable LLM inference, launch `ollama serve` and pull `qwen2.5:1.5b`.")
+        st.warning(f"🟡 **Offline Mode Active:** Ollama not detected on `{OLLAMA_BASE_URL}`. Using CyberSentinel Grounded Deterministic Security Engine. To enable LLM inference, launch `ollama serve` and pull `qwen2.5:0.5b`.")
 
     # Context Summary from current analysis if present
     analysis_ctx = None

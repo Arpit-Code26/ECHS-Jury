@@ -26,6 +26,7 @@ STRICT OPERATIONAL RULES:
 def check_ollama_status(base_url: str = OLLAMA_BASE_URL) -> Dict[str, Any]:
     """
     Checks if local Ollama server is running and inspects available models.
+    Dynamically falls back to any available lightweight model (e.g. qwen2.5:0.5b).
     """
     tags_url = f"{base_url.rstrip('/')}/api/tags"
     try:
@@ -33,10 +34,20 @@ def check_ollama_status(base_url: str = OLLAMA_BASE_URL) -> Dict[str, Any]:
         if resp.status_code == 200:
             models_info = resp.json().get("models", [])
             model_names = [m.get("name") for m in models_info]
-            preferred_available = any(OLLAMA_MODEL in name for name in model_names)
+            
+            # Select active model: preferred OLLAMA_MODEL or best match
+            active_model = OLLAMA_MODEL
+            if not any(OLLAMA_MODEL in name for name in model_names):
+                qwen_models = [name for name in model_names if "qwen" in name.lower()]
+                if qwen_models:
+                    active_model = qwen_models[0]
+                elif model_names:
+                    active_model = model_names[0]
+
+            preferred_available = len(model_names) > 0
             return {
                 "is_online": True,
-                "preferred_model": OLLAMA_MODEL,
+                "preferred_model": active_model,
                 "preferred_available": preferred_available,
                 "available_models": model_names,
                 "error": None
@@ -171,7 +182,7 @@ Please provide:
 4. Suggested defensive investigation steps for the administrator.
 5. Analytical limitations or uncertainties (e.g. possibility of false positives).
 """
-    res = query_ollama_llm(prompt)
+    res = query_ollama_llm(prompt, model=status["preferred_model"])
     if res["success"] and res["response"]:
         return res["response"].strip()
     else:
@@ -189,7 +200,7 @@ def ask_security_assistant(
     if status["is_online"]:
         ctx_str = f"\nCurrent Detection Context:\n{json.dumps(context_summary, indent=2)}\n" if context_summary else ""
         prompt = f"{ctx_str}User Question: {question}\nProvide a clear, technically sound, and concise cybersecurity answer:"
-        res = query_ollama_llm(prompt)
+        res = query_ollama_llm(prompt, model=status["preferred_model"])
         if res["success"] and res["response"]:
             return res["response"].strip()
 

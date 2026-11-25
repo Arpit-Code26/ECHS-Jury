@@ -36,7 +36,7 @@ MAX_DISPLAY_RECORDS = int(os.getenv("MAX_DISPLAY_RECORDS", "500"))
 
 # Ollama LLM Settings
 OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
-OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "qwen2.5:1.5b")
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "qwen2.5:0.5b")
 OLLAMA_TIMEOUT_SECONDS = int(os.getenv("OLLAMA_TIMEOUT_SECONDS", "15"))
 
 # Model Bundle File Paths
